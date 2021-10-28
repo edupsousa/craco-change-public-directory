@@ -1,6 +1,6 @@
 {
   "name": "craco-change-public-directory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin to change the public directory on create-react-app projects using CRACO",
   "main": "lib/index.js",
   "scripts": {
