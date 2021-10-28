@@ -38,3 +38,10 @@ module.exports = {
   ],
 };
 ```
+## Limitations and Known Issues
+
+The way this plugin works is kind of a hack. The purpose of the method `overrideWebpackConfig` is to return a modified webpack configuration, but we use the same method make changes to the `context.paths` object received as parameter.
+
+Unfortunately, right now, there's no hook method on CRACO plugin system with the purpose of making changes to the `context` or `context.paths` object. This misuse of CRACO plugin API implies that small changes in the future can easily break this plugin functionality.
+
+Also there's a chance that other (CRA/CRACO/Jest/WebPack/...) plugins read the path before our changes are made, or have this paths hardcoded.
