@@ -1,0 +1,48 @@
+{
+  "name": "craco-change-public-directory",
+  "version": "1.0.0",
+  "description": "Plugin to change the public directory on create-react-app projects using CRACO",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edupsousa/craco-change-public-directory.git"
+  },
+  "keywords": [
+    "craco",
+    "cra",
+    "create-react-app",
+    "plugin"
+  ],
+  "author": "Eduardo P de Sousa <edupsousa@gmail.com> (https://github.com/edupsousa/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edupsousa/craco-change-public-directory/issues"
+  },
+  "homepage": "https://github.com/edupsousa/craco-change-public-directory#readme",
+  "devDependencies": {
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1"
+  },
+  "peerDependencies": {
+    "@craco/craco": "^6.0.0"
+  },
+  "lint-staged": {
+    "lib/**/*.js": [
+      "npx prettier --write lib/*",
+      "npx eslint -c .eslintrc.json --fix lib/*",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
